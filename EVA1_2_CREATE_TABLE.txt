@@ -1,0 +1,123 @@
+EVA1_2_CREATE_TABLE
+MySQL Shell 8.0.38
+
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > root@localhost
+ERROR: Not connected.
+           ->
+           -> root@localhost;
+ERROR: Not connected.
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Please provide the password for 'root@localhost': *********
+Save password for 'root@localhost'? [Y]es/[N]o/Ne[v]er (default No): Y
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 20
+Server version: 8.0.39 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > crete database tbd_e1;
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'crete database tbd_e1' at line 1
+ MySQL  localhost:3306 ssl  SQL > create database tds_e1
+                               -> ;
+Query OK, 1 row affected (0.0245 sec)
+ MySQL  localhost:3306 ssl  SQL > show database;
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+ MySQL  localhost:3306 ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| tds_e1             |
+| world              |
++--------------------+
+7 rows in set (0.0086 sec)
+ MySQL  localhost:3306 ssl  SQL > use tbd_e1;
+MySQL Error 1049: Unknown database 'tbd_e1'
+ MySQL  localhost:3306 ssl  SQL > use tds_e1
+Default schema set to `tds_e1`.
+Fetching global names, object names from `tds_e1` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tds_e1  SQL > drop database tds_e1;
+Query OK, 0 rows affected (0.0367 sec)
+ MySQL  localhost:3306 ssl  tds_e1  SQL > shoe tables;
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'shoe tables' at line 1
+ MySQL  localhost:3306 ssl  tds_e1  SQL > show tables;
+ERROR: 1046 (3D000): No database selected
+ MySQL  localhost:3306 ssl  tds_e1  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.0082 sec)
+ MySQL  localhost:3306 ssl  tds_e1  SQL > create database tbd_e1;
+Query OK, 1 row affected (0.0129 sec)
+ MySQL  localhost:3306 ssl  tds_e1  SQL > use tbd_e1;
+Default schema set to `tbd_e1`.
+Fetching global names, object names from `tbd_e1` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create table primer_tabla();
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create table primer_tabla(
+                                       -> id int);
+Query OK, 0 rows affected (0.0850 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > show tables;
++------------------+
+| Tables_in_tbd_e1 |
++------------------+
+| primer_tabla     |
++------------------+
+1 row in set (0.0277 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > drop table primera_tabla;
+ERROR: 1051 (42S02): Unknown table 'tbd_e1.primera_tabla'
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > drop table primer_tabla;
+Query OK, 0 rows affected (0.0340 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create table primer_tabla( id int);
+Query OK, 0 rows affected (0.0310 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > drop database tbd_e1;
+Query OK, 1 row affected (0.0231 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create database tbd_e1;
+Query OK, 1 row affected (0.0119 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create table primer_tabla( id int);
+ERROR: 1046 (3D000): No database selected
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| tbd_e1             |
+| world              |
++--------------------+
+7 rows in set (0.0013 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > show tables;
+ERROR: 1046 (3D000): No database selected
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > use tbd_e1;
+Default schema set to `tbd_e1`.
+Fetching global names, object names from `tbd_e1` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > create table primer_tabla( id int);
+Query OK, 0 rows affected (0.0438 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL > show tables;
++------------------+
+| Tables_in_tbd_e1 |
++------------------+
+| primer_tabla     |
++------------------+
+1 row in set (0.0019 sec)
+ MySQL  localhost:3306 ssl  tbd_e1  SQL >
